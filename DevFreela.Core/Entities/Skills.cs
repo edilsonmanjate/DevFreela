@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DevFreela.Core.Entities
 {
-    public class Skill : BaseEntity
+    public class Skills : BaseEntity
     {
-        public Skill(string description)
+        public Skills(string description)
         {
             Description = description;
             CreatedAt = DateTime.Now;
