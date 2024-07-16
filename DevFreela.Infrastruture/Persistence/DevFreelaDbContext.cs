@@ -12,11 +12,11 @@ namespace DevFreela.Infrastruture.Persistence
     {
         public DevFreelaDbContext()
         {
-            Projects = new List<Projects>()
+            Projects = new List<Project>()
             {
-                new Projects("Project 1", "Description 1", 1, 2,1000, DateTime.Now),
-                new Projects("Project 2", "Description 2", 2, 3,2000,DateTime.Now),
-                new Projects("Project 3", "Description 3", 3, 1, 3000, DateTime.Now),
+                new Project("Project 1", "Description 1", 1, 2,1000),
+                new Project("Project 2", "Description 2", 2, 3,2000),
+                new Project("Project 3", "Description 3", 3, 1, 3000),
 
             };
 
@@ -35,8 +35,9 @@ namespace DevFreela.Infrastruture.Persistence
                 new Skills("SQL")
             };
         }
-        public List<Projects> Projects { get; set; }
+        public List<Project> Projects { get; set; }
         public List<User> Users { get; set; }
         public List<Skills> Skills { get; set; }
+        public List<ProjectComment> ProjectComments { get; set; }
     }
 }
