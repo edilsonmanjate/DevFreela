@@ -26,6 +26,8 @@ namespace DevFreela.Core.Entities
         public ProjectStatusEnum Status { get; private set; }
         public DateTime CreatedAt { get; private set; }
         public List<ProjectComment> Comments { get; private set; }
+        public User Client { get; set; }
+        public User Freelancer { get; set; }
 
         public void Cancel() 
         { 

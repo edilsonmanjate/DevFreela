@@ -13,6 +13,8 @@
         public int IdProject { get; private set; }
         public int IdUser { get; private set; }
         public DateTime CreatedAt { get; private set; }
+        public Project Project { get; set; }
+        public User User { get; set; }
 
     }
 }

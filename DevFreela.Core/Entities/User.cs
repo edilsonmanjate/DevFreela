@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DevFreela.Core.Entities
+﻿namespace DevFreela.Core.Entities
 {
     public class User : BaseEntity
     {
@@ -31,6 +25,8 @@ namespace DevFreela.Core.Entities
         public List<UserSkill> Skills { get; private set; } 
         public List<Project> OwnedProjects { get; private set; }
         public List<Project> FreelanceProjects { get; private set; }
+
+        public List<ProjectComment> Comments { get; set; }
 
 
     }
