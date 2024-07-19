@@ -23,29 +23,29 @@ namespace DevFreela.Application.Services.Implementations
             _connectionString = configuration.GetConnectionString("DeveFreelaCs");
         }
 
-        public int Create(NewProjectInputModel inputModel)
-        {
-            var project = new Project(inputModel.Title, inputModel.Description, inputModel.IdCliente, inputModel.IdFreelancer, inputModel.TotalCost);
-            _devFreelaDbContext.Projects.Add(project);
-            _devFreelaDbContext.SaveChanges();
-            return  project.Id;
-        }
+        //public int Create(NewProjectInputModel inputModel)
+        //{
+        //    var project = new Project(inputModel.Title, inputModel.Description, inputModel.IdCliente, inputModel.IdFreelancer, inputModel.TotalCost);
+        //    _devFreelaDbContext.Projects.Add(project);
+        //    _devFreelaDbContext.SaveChanges();
+        //    return  project.Id;
+        //}
 
-        public void CreateComment(CreateCommentInputModel inputModel)
-        {
-            var comment = new ProjectComment(inputModel.Content, inputModel.IdUser, inputModel.IdUser);
-            _devFreelaDbContext.ProjectComments.Add(comment);
-            _devFreelaDbContext.SaveChanges();
+        //public void CreateComment(CreateCommentInputModel inputModel)
+        //{
+        //    var comment = new ProjectComment(inputModel.Content, inputModel.IdUser, inputModel.IdUser);
+        //    _devFreelaDbContext.ProjectComments.Add(comment);
+        //    _devFreelaDbContext.SaveChanges();
 
-        }
+        //}
 
-        public void Delete(int id)
-        {
-            var project = _devFreelaDbContext.Projects.SingleOrDefault(p => p.Id == id);
-            project.Cancel();
-            _devFreelaDbContext.SaveChanges();
+        //public void Delete(int id)
+        //{
+        //    var project = _devFreelaDbContext.Projects.SingleOrDefault(p => p.Id == id);
+        //    project.Cancel();
+        //    _devFreelaDbContext.SaveChanges();
 
-        }
+        //}
 
 
         public void Finish(int id)
@@ -56,15 +56,15 @@ namespace DevFreela.Application.Services.Implementations
 
         }
 
-        public List<ProjectViewModel> GetAll(string query)
-        {
-            var projects = _devFreelaDbContext.Projects;
-            var projectsViewModel = projects
-                .Select(p => new ProjectViewModel(p.Id,p.Title,p.CreatedAt))
-                .ToList();
+        //public List<ProjectViewModel> GetAll(string query)
+        //{
+        //    var projects = _devFreelaDbContext.Projects;
+        //    var projectsViewModel = projects
+        //        .Select(p => new ProjectViewModel(p.Id,p.Title,p.CreatedAt))
+        //        .ToList();
 
-            return projectsViewModel;
-        }
+        //    return projectsViewModel;
+        //}
 
         public ProjectDetailsViewModel GetById(int id)
         {
@@ -105,13 +105,11 @@ namespace DevFreela.Application.Services.Implementations
 
         }
 
-        public void Update(int id, UpdateProjectInputModel inputModel)
-        {
-            var project = _devFreelaDbContext.Projects.SingleOrDefault(p => p.Id == inputModel.Id);
-            project.Update(inputModel.Title, inputModel.Description, inputModel.TotalCost);
-            _devFreelaDbContext.SaveChanges();
-
-
-        }
+        //public void Update(int id, UpdateProjectInputModel inputModel)
+        //{
+        //    var project = _devFreelaDbContext.Projects.SingleOrDefault(p => p.Id == inputModel.Id);
+        //    project.Update(inputModel.Title, inputModel.Description, inputModel.TotalCost);
+        //    _devFreelaDbContext.SaveChanges();
+        //}
     }
 }
