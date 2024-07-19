@@ -1,7 +1,9 @@
 using DevFreela.Application.Commands.CreateProject;
 using DevFreela.Application.Services.Implementations;
 using DevFreela.Application.Services.Interfaces;
+using DevFreela.Core.Respositories;
 using DevFreela.Infrastruture.Persistence;
+using DevFreela.Infrastruture.Persistence.Repositories;
 
 using MediatR;
 
@@ -16,9 +18,14 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DevFreelaCsHome");
 builder.Services.AddDbContext<DevFreelaDbContext>(options =>options.UseSqlServer(connectionString));
 
-builder.Services.AddScoped<IProjectService, ProjectService>();
-builder.Services.AddScoped<ISkillService, SkillService>();
-builder.Services.AddScoped<IUserService, UserService>();
+//builder.Services.AddScoped<IProjectService, ProjectService>();
+//builder.Services.AddScoped<ISkillService, SkillService>();
+//builder.Services.AddScoped<IUserService, UserService>();
+
+builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
+builder.Services.AddScoped<ISkillRepository, SkillRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
 
 builder.Services.AddControllers();
 

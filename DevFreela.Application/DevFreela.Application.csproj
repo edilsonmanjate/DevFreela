@@ -16,8 +16,4 @@
     <ProjectReference Include="..\DevFreela.Infrastruture\DevFreela.Infrastruture.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Queries\GetUser\" />
-  </ItemGroup>
-
 </Project>
